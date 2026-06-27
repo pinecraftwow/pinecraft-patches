@@ -1,0 +1,20 @@
+# Source of truth for which release assets become manifest entries.
+# Copy this to the ROOT of your patches repo as `patches.toml`.
+
+server_id            = "pinecraft"
+client_version       = "3.3.5a-12340"
+realmlist            = "logon.pinecraft-server.com"
+locale               = "enUS"
+min_launcher_version = "0.1.0"
+
+# One [[file]] per release asset.
+#
+# asset    = filename uploaded to the GitHub Release
+# path     = destination inside the player's WoW install (forward slashes)
+# required = true for game-critical, false for optional cosmetic packs
+# label    = shown in the launcher UI for optional packs
+
+[[file]]
+asset    = "patch-4.MPQ"
+path     = "Data/patch-4.MPQ"
+required = true
