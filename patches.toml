@@ -17,3 +17,8 @@ required = true
 asset    = "patch-Z.mpq"
 path     = "Data/patch-Z.MPQ"
 required = true
+
+[[file]]
+asset    = "patch-E.mpq"
+path     = "Data/patch-E.MPQ"
+required = true
