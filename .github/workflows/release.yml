@@ -14,9 +14,6 @@ jobs:
         with:
           go-version: '1.22'
 
-      - name: Clone launcher (for sign-manifest tool)
-        run: git clone --depth 1 https://github.com/pinecraftwow/wow-launcher.git launcher
-
       - name: Download release assets
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -31,14 +28,13 @@ jobs:
 
       - name: Build + sign manifest
         run: |
-          cd launcher
           go run ./tools/sign-manifest build \
-            --patches-toml ../patches.toml \
-            --assets-dir ../assets \
+            --patches-toml patches.toml \
+            --assets-dir ./assets \
             --release-tag "${{ github.event.release.tag_name }}" \
             --repo "${{ github.repository }}" \
-            --key ../priv.hex \
-            --out ../manifest.json
+            --key priv.hex \
+            --out manifest.json
 
       - name: Upload manifest to release
         env:
