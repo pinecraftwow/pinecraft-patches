@@ -3,7 +3,7 @@
 
 server_id            = "pinecraft"
 client_version       = "3.3.5a-12340"
-realmlist            = "logon.pinecraft-server.com"
+realmlist            = "logon.pinecraft.eu"
 locale               = "enUS"
 min_launcher_version = "0.1.0"
 
